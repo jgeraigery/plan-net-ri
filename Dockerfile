@@ -9,6 +9,6 @@ COPY --from=build /usr/src/app/target /var/lib/jetty/target
 ADD ./data /var/lib/jetty/target/
 COPY src /var/lib/jetty/src
 USER root
-RUN chown -R jetty:jetty /var/lib/jetty/target
+RUN chown -R jetty:jetty /var/lib/jetty
 USER jetty:jetty
 EXPOSE 8080
