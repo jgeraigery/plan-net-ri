@@ -215,7 +215,7 @@ public class JpaRestfulServer extends RestfulServer {
 
       config.addExposedHeader("Location");
       config.addExposedHeader("Content-Location");
-      config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH", "HEAD"));
+      config.setAllowedMethods(Arrays.asList("GET", "OPTIONS", "HEAD"));
       config.setAllowCredentials(HapiProperties.getCorsAllowedCredentials());
 
       // Create the interceptor and register it
