@@ -60,6 +60,9 @@ public class Metadata extends ServerCapabilityStatementProvider {
                 interactions.add(new ResourceInteractionComponent().setCode(TypeRestfulInteraction.SEARCHTYPE));
                 interactions.add(new ResourceInteractionComponent().setCode(TypeRestfulInteraction.VREAD));
                 resource.setInteraction(interactions);
+                resource.setConditionalCreate(false);
+                resource.setConditionalUpdate(false);
+                resource.setConditionalDelete(CapabilityStatement.ConditionalDeleteStatus.NOTSUPPORTED);
 
                 switch(resource.getType()) {
                     case "Endpoint":
@@ -71,8 +74,14 @@ public class Metadata extends ServerCapabilityStatementProvider {
                     case "InsurancePlan":
                         resource.setProfile("http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-InsurancePlan");
                         break;
+                    case "List":
+                        resouce.setProfile("http://hl7.org/fhir/us/davinci-drug-formulary/StructureDefinition-usdf-CoveragePlan.html");
+                        break;
                     case "Location":
                         resource.setProfile("http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Location");
+                        break;
+                    case "MedicationKnowledge":
+                        resource.setProfile("http://hl7.org/fhir/us/davinci-drug-formulary/StructureDefinition-usdf-FormularyDrug.html");
                         break;
                     case "Organization":
                         resource.getSupportedProfile().add(new CanonicalType("http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Organization"));
