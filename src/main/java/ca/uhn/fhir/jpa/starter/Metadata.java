@@ -75,7 +75,7 @@ public class Metadata extends ServerCapabilityStatementProvider {
                         resource.setProfile("http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-InsurancePlan");
                         break;
                     case "List":
-                        resouce.setProfile("http://hl7.org/fhir/us/davinci-drug-formulary/StructureDefinition-usdf-CoveragePlan.html");
+                        resource.setProfile("http://hl7.org/fhir/us/davinci-drug-formulary/StructureDefinition-usdf-CoveragePlan.html");
                         break;
                     case "Location":
                         resource.setProfile("http://hl7.org/fhir/us/davinci-pdex-plan-net/StructureDefinition/plannet-Location");
