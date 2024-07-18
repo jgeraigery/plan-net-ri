@@ -1,5 +1,5 @@
 ARG ENVIRONMENT=local
-FROM maven:3.6.1-jdk-8 AS build
+FROM maven:3.8.6-jdk-8 AS build
 COPY pom.xml /usr/src/app/pom.xml
 COPY src /usr/src/app/src
 RUN mvn -f /usr/src/app/pom.xml clean package
